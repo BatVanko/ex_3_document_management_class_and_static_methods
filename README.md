@@ -1,0 +1,1 @@
+# ex_3_document_management_class_and_static_methods
