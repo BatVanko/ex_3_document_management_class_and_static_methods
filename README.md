@@ -28,3 +28,33 @@ Upon initialization the class Storage will not receive any parameters. It should
 •	delete_document(document_id) - delete the document with the provided id
 •	get_document(document_id) - return the document with the provided id
 •	__repr__() - returns a string representation of each document on separate lines
+
+Test Code
+from project.category import Category
+from project.document import Document
+from project.storage import Storage
+from project.topic import Topic
+
+c1 = Category(1, "work")
+t1 = Topic(1, "daily tasks", "C:\\work_documents")
+d1 = Document(1, 1, 1, "finilize project")
+
+d1.add_tag("urgent")
+d1.add_tag("work")
+
+storage = Storage()
+storage.add_category(c1)
+storage.add_topic(t1)
+storage.add_document(d1)
+
+print(c1)
+print(t1)
+print(storage.get_document(1))
+print(storage)
+
+Output
+Category 1: work
+Topic 1: daily tasks in C:\work_documents
+Document 1: finilize project; category 1, topic 1, tags: urgent, work
+Document 1: finilize project; category 1, topic 1, tags: urgent, work
+
